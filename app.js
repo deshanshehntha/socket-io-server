@@ -1,5 +1,5 @@
 "use strict";
-const port = 4003;
+const port = process.env.PORT;
 const socketIo = require("socket.io");
 const axios = require("axios");
 const SERVER_ID = "03S"
@@ -33,11 +33,11 @@ server.listen(port, () => console.log(`Create Listening on port ${port}`));
 
 /** create nGrok Tunnel*/
 
-console.log("starting tunnel")
+// console.log("starting tunnel")
 
-const ngrok = require('ngrok');
-(async function() {
-    const url = await ngrok.connect(port); // https://757c1652.ngrok.io -> http://localhost:9090
+// const ngrok = require('ngrok');
+// (async function() {
+//     const url = await ngrok.connect(port); // https://757c1652.ngrok.io -> http://localhost:9090
 
     global.io = require('socket.io')(server);
 
@@ -81,8 +81,6 @@ const ngrok = require('ngrok');
 
     });
 
-
-})();
 
 
 
