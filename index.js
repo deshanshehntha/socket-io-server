@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const AllConnectionsTestStore = require("./allConnectionsTestStore");
-
+const ConnectionTracker = require("./ConnectionsTracker");
+const findConnection = require("./connectionFinderAlgorithm")
 
 router.get("/", (req, res) => {
     res.send({response: "I am alive"}).status(200);
@@ -17,9 +18,9 @@ router.get("/sendBroadcastMessage", (req, res) => {
     res.send('respond with a resource');
 });
 
-router.get("/getConnectionDetails", (req, res) => {
-    io.emit('requesting_connection_details');
-    res.send('respond with a resource');
+router.post("/getConnectionDetails", (req, res) => {
+    console.log(req);
+    res.send(findConnection.connectionFinder(req)).status(200);
 });
 
 
