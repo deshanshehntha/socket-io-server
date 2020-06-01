@@ -41,8 +41,6 @@ server.listen(port, () => console.log(`Create Listening on port ${port}`));
 
     global.io = require('socket.io')(server);
 
-    console.log(url)
-
     global.io.on('connection', function (socket) {
         console.log("Connected Socket = " + socket.id);
 
