@@ -19,10 +19,10 @@
     "public-ip": "^4.0.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "latest",
-    "socket.io-redis": "^5.2.0"
+    "socket.io-redis": "^5.2.0",
+    "ngrok": "^3.2.7"
   },
   "devDependencies": {
-    "ecstatic": "^4.1.2",
-    "ngrok": "^3.2.7"
+    "ecstatic": "^4.1.2"
   }
 }
