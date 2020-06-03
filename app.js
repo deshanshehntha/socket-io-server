@@ -1,5 +1,5 @@
 "use strict";
-const port = 4003;
+const port = process.env.port;
 const socketIo = require("socket.io");
 const axios = require("axios");
 const SERVER_ID = "03S"
