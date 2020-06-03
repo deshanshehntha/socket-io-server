@@ -1,5 +1,5 @@
 "use strict";
-const port = process.env.port;
+const port = 4003;
 const socketIo = require("socket.io");
 const axios = require("axios");
 const SERVER_ID = "03S"
@@ -28,15 +28,20 @@ const app = express();
 app.use(index);
 
 const server = http.createServer(app);
-server.listen(port, () => console.log(`Create Listening on port ${port}`));
+server.listen(port, () => console.log(`Create Listening on port ${server.address().port}`));
+
 
 /** create nGrok Tunnel*/
 
 console.log("starting tunnel")
 
- const io = socketIo(server);
+// const ngrok = require('ngrok');
+// (async function() {
+//     const url = await ngrok.connect(port); // https://757c1652.ngrok.io -> http://localhost:9090
 
-    io.on('connection', function (socket) {
+    global.io = require('socket.io')(server);
+
+    global.io.on('connection', function (socket) {
         console.log("Connected Socket = " + socket.id);
 
         socket.on('own_client', function () {
@@ -69,13 +74,13 @@ console.log("starting tunnel")
             console.log("Pushed" + UserStore.getAll())
         });
 
+        socket.on('getting_connected_node_details', function (data) {
+            console.log("Node connection details | url : " + data.url + " Connection Data : " + data.childNodes)
+        });
+
     });
 
-
-
-
-
-
+// })();
 
 
 // /** create socket io client*/
@@ -114,7 +119,7 @@ console.log("starting tunnel")
 
 function leadershipSelectionAlgorithm(socketId) {
 
-    if(UserStore.getAll().length <= 4 ){
+    if(UserStore.getAll().length <= 2 ){
         console.log("Kept the connection" + UserStore.getAll().length);
             return 1;
     } else {
@@ -132,3 +137,5 @@ function leadershipSelectionAlgorithm(socketId) {
     }
 
 }
+
+

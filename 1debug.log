@@ -1,20 +1,30 @@
+starting tunnel
 Create Listening on port 4003
-Here
-{ id: '01C', url: 'https://7b3a3be6c3cb.ngrok.io' }
-{ status: 1, redirectURL: '' }
-Connected Socket = 5WhOIL_hCG2oB-WlAAAA
-client connection requesthttps://7b3a3be6c3cb.ngrok.io 01C
-Here
-{ id: '01C', url: 'https://65251a666ea3.ngrok.io' }
-{ status: 1, redirectURL: '' }
-Connected Socket = E1tDQg0eH5kPiYSaAAAB
-client connection requesthttps://65251a666ea3.ngrok.io 01C
-Here
-{ id: '01C', url: 'https://ed3d413162ad.ngrok.io' }
-undefined
-Disconnected Socket = E1tDQg0eH5kPiYSaAAAB
-deleted[object Object]
-deleted[object Object]
-Disconnected Socket = 5WhOIL_hCG2oB-WlAAAA
-deleted
-deleted
+Connected Socket = 3FCufl9_a2JkM597AAAA
+client connection requesthttps://3d3ffef1c226.ngrok.io 01C
+Kept the connection1
+Connected Socket = ivaxv6ABREu5r_uAAAAB
+client connection requesthttps://6c1d5e9c1851.ngrok.io 01C
+Kept the connection2
+Connected Socket = QK7BgzWuKEyLrr-xAAAC
+client connection requesthttps://3c4d5bd58410.ngrok.io 01C
+deleted[object Object],[object Object]
+by date:
+[
+  {
+    socketId: '3FCufl9_a2JkM597AAAA',
+    id: '01C',
+    url: 'https://3d3ffef1c226.ngrok.io',
+    timestamp: 1591161517075
+  },
+  {
+    socketId: 'ivaxv6ABREu5r_uAAAAB',
+    id: '01C',
+    url: 'https://6c1d5e9c1851.ngrok.io',
+    timestamp: 1591161530147
+  }
+]
+https://3d3ffef1c226.ngrok.io
+Disconnected Socket = QK7BgzWuKEyLrr-xAAAC
+deleted[object Object],[object Object]
+deleted[object Object],[object Object]
