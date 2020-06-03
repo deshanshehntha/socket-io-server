@@ -6,14 +6,12 @@ class ConnectionTracker {
         this._data = [];
     }
 
-    add(id, mainConnectionURL, childrenConnections, timestamp) {
-        let obj = {
-            id : id,
-            mainConnectionURL : mainConnectionURL,
-            childrenConnections : childrenConnections,
-            timestamp : timestamp
-        }
+    add(obj) {
         this._data.push(obj);
+    }
+
+    updateList(data) {
+        this._data = data;
     }
 
     getAll() {

@@ -1,13 +1,10 @@
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
+
 const router = express.Router();
 
-const AllConnectionsTestStore = require("./allConnectionsTestStore");
-const ConnectionTracker = require("./ConnectionsTracker");
 const findConnection = require("./connectionFinderAlgorithm")
-
-router.get("/", (req, res) => {
-    res.send({response: "I am alive"}).status(200);
-});
+const ConnectionTracker = require("./connectionsTracker")
 
 router.get("/getActiveUsers", (req, res) => {
     res.send({response: AllConnectionsTestStore.getAll()}).status(200);
@@ -25,5 +22,3 @@ router.post("/getConnectionDetails", (req, res) => {
 
 
 module.exports = router;
-
-
