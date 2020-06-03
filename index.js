@@ -6,8 +6,8 @@ const router = express.Router();
 const findConnection = require("./connectionFinderAlgorithm")
 const ConnectionTracker = require("./connectionsTracker")
 
-router.get("/getActiveUsers", (req, res) => {
-    res.send({response: AllConnectionsTestStore.getAll()}).status(200);
+router.get("/", (req, res) => {
+    res.send({response: "im alive"}).status(200);
 });
 
 router.get("/sendBroadcastMessage", (req, res) => {
