@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/sendBroadcastMessage", (req, res) => {
-    io.emit('status', { 'message': 'hello' });
+    io.emit('requesting_connection_details', { 'message': 'hello' });
     res.send('respond with a resource');
 });
 
