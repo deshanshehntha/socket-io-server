@@ -1,19 +1,37 @@
-class AllConnectionsTestStore {
+class ConnectedNodeStore {
 
     _data = [];
+    _peerNodeConnectionList = [];
 
     constructor() {
         this._data = [];
     }
+    add(url, chilNodeArray) {
+        let tempArr = [];
+        tempArr = chilNodeArray;
 
-    add(socketId, id, url, timestamp) {
         let obj = {
-            socketId : socketId,
-            id : id,
-            url : url,
-            timestamp : timestamp
+            id : url,
+            loaded : true,
+            age : 22,
+            name : "S1"
         }
         this._data.push(obj);
+
+        if(tempArr.length !== 0) {
+            tempArr.forEach(function (obj) {
+                let peerObj = {
+                    id : Date.now(),
+                    from : obj.url,
+                    to : url,
+                    type : "friend"
+                }
+                this._peerNodeConnectionList.push(peerObj);
+
+            })
+        }
+
+
     }
 
     getAll() {
@@ -21,19 +39,19 @@ class AllConnectionsTestStore {
         return this._data;
     }
 
-    remove(socketId) {
-        this._data = this._data.filter(function (obj) {
-            return obj.socketId !== socketId;
-        });
-        console.log("deleted" + this._data)
-
+    removeAll() {
+        this._data = [];
+        this._peerNodeConnectionList = [];
     }
 
-    getLength() {
-        return this._data.length;
+    getConnectionDetails() {
+      let obj = {
+          nodes : this._data,
+          links : this._peerNodeConnectionList
+      }
     }
 }
 
-const instance = new AllConnectionsTestStore();
+const instance = new ConnectedNodeStore();
 
 module.exports = instance;

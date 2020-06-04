@@ -6,6 +6,8 @@ const SERVER_ID = "03S"
 
 const UserStore = require("./clientDataStore");
 const AllConnectionsTestStore = require("./allConnectionsTestStore");
+const ConnectedNodeStore = require("./allConnectionsTestStore")
+
 /** Initiate Logging sequence */
 
 var fs = require('fs');
@@ -75,7 +77,8 @@ console.log("starting tunnel")
         });
 
         socket.on('getting_connected_node_details', function (data) {
-            console.log("Node connection details | url : " + data.url + " Connection Data : " + data.childNodes)
+            console.log("Node connection details | url : " + data.url + " Connection Data : " + data.childNodes);
+            ConnectedNodeStore.add(data.url, data.childNodes );
         });
 
     });

@@ -3,16 +3,21 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 
-const findConnection = require("./connectionFinderAlgorithm")
-const ConnectionTracker = require("./connectionsTracker")
+const findConnection = require("./connectionFinderAlgorithm");
+const ConnectionTracker = require("./connectionsTracker");
+const ConnectedNodeStore = require("./allConnectionsTestStore");
 
 router.get("/", (req, res) => {
     res.send({response: "im alive"}).status(200);
 });
 
 router.get("/sendBroadcastMessage", (req, res) => {
-    io.emit('requesting_connection_details', { 'message': 'hello' });
-    res.send('respond with a resource');
+    ConnectedNodeStore.removeAll();
+
+    io.emit('requesting_connection_details');
+    io.emit('recieving_connection_details');
+    res.send(ConnectedNodeStore.getConnectionDetails());
+
 });
 
 router.post("/getConnectionDetails", (req, res) => {
