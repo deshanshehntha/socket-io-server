@@ -1,11 +1,10 @@
 "use strict";
-const port = process.env.PORT;
+const port = 4003;
 const socketIo = require("socket.io");
 const axios = require("axios");
 const SERVER_ID = "03S"
 
 const UserStore = require("./clientDataStore");
-const AllConnectionsTestStore = require("./allConnectionsTestStore");
 const ConnectedNodeStore = require("./allConnectionsTestStore")
 
 /** Initiate Logging sequence */
@@ -53,7 +52,6 @@ console.log("starting tunnel")
         socket.on('client_connection_request', function (data) {
             console.log("client connection request" + data.ip + " " + data.customId)
             UserStore.add(socket.id, data.customId, data.ip, Date.now());
-            AllConnectionsTestStore.add(socket.id, data.customId, data.ip, Date.now())
                 const address = leadershipSelectionAlgorithm(socket.id);
             socket.emit('redirect_url', address);
 
@@ -62,7 +60,6 @@ console.log("starting tunnel")
         socket.on('disconnect', function () {
             console.log("Disconnected Socket = " + socket.id);
             UserStore.remove(socket.id);
-            AllConnectionsTestStore.remove(socket.id)
         });
 
 

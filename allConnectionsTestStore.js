@@ -1,14 +1,17 @@
 class ConnectedNodeStore {
 
     _data = [];
-    _peerNodeConnectionList = [];
+    static _peerNodeConnectionList = []
 
     constructor() {
         this._data = [];
+        ConnectedNodeStore._peerNodeConnectionList = [];
     }
-    add(url, chilNodeArray) {
+
+    add(url, childNodeArray) {
+        const UserStore = require("./clientDataStore");
         let tempArr = [];
-        tempArr = chilNodeArray;
+        tempArr = childNodeArray;
 
         let obj = {
             id : url,
@@ -20,20 +23,31 @@ class ConnectedNodeStore {
 
         if(tempArr.length !== 0) {
             tempArr.forEach(function (obj) {
+                let i;
+                console.log("count"+ i++)
                 let peerObj = {
                     id : Date.now(),
                     from : obj.url,
                     to : url,
                     type : "friend"
                 }
-                this._peerNodeConnectionList.push(peerObj);
+                ConnectedNodeStore._peerNodeConnectionList.push(peerObj);
 
             })
+
+        }
+        if(UserStore.find(url) === true) {
+            let peerObj = {
+                id : Date.now(),
+                from : url,
+                to : "SERVER",
+                type : "friend"
+            }
+            ConnectedNodeStore._peerNodeConnectionList.push(peerObj);
         }
 
 
     }
-
     getAll() {
         // return this._data.find(d => d.id === id);
         return this._data;
@@ -41,14 +55,23 @@ class ConnectedNodeStore {
 
     removeAll() {
         this._data = [];
-        this._peerNodeConnectionList = [];
+        ConnectedNodeStore._peerNodeConnectionList = [];
     }
 
     getConnectionDetails() {
+        let serverObj = {
+            id : "SERVER",
+            loaded : true,
+            age : 22,
+            name : "S1"
+        }
+        this._data.push(serverObj);
+
       let obj = {
           nodes : this._data,
-          links : this._peerNodeConnectionList
+          links : ConnectedNodeStore._peerNodeConnectionList
       }
+      return obj;
     }
 }
 

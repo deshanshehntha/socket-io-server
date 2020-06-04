@@ -1,2 +1,84 @@
 starting tunnel
-Create Listening on port 46755
+Create Listening on port 4003
+Connected Socket = -IW_UceXjNqdsT4JAAAA
+client connection requesthttps://1e0a8f45c7bd.ngrok.io 01C
+Kept the connection1
+Connected Socket = zer8T_71FJi9RdqDAAAB
+client connection requesthttps://ec6cd317ab3b.ngrok.io 01C
+Kept the connection2
+Connected Socket = U6fuIVNbP3Ke1TZpAAAC
+client connection requesthttps://15c1f36c4458.ngrok.io 01C
+deleted[object Object],[object Object]
+by date:
+[
+  {
+    socketId: '-IW_UceXjNqdsT4JAAAA',
+    id: '01C',
+    url: 'https://1e0a8f45c7bd.ngrok.io',
+    timestamp: 1591257560934
+  },
+  {
+    socketId: 'zer8T_71FJi9RdqDAAAB',
+    id: '01C',
+    url: 'https://ec6cd317ab3b.ngrok.io',
+    timestamp: 1591257566509
+  }
+]
+https://1e0a8f45c7bd.ngrok.io
+Disconnected Socket = U6fuIVNbP3Ke1TZpAAAC
+deleted[object Object],[object Object]
+Connected Socket = dOoE6LZLWDcyzvo5AAAD
+client connection requesthttps://fb35dc94732d.ngrok.io 01C
+deleted[object Object],[object Object]
+by date:
+[
+  {
+    socketId: 'zer8T_71FJi9RdqDAAAB',
+    id: '01C',
+    url: 'https://ec6cd317ab3b.ngrok.io',
+    timestamp: 1591257566509
+  },
+  {
+    socketId: '-IW_UceXjNqdsT4JAAAA',
+    id: '01C',
+    url: 'https://1e0a8f45c7bd.ngrok.io',
+    timestamp: 1591257572111
+  }
+]
+https://ec6cd317ab3b.ngrok.io
+Disconnected Socket = dOoE6LZLWDcyzvo5AAAD
+deleted[object Object],[object Object]
+Connected Socket = acg7fL0G_k9IG6TuAAAE
+client connection requesthttps://6aeae30efa4c.ngrok.io 01C
+deleted[object Object],[object Object]
+by date:
+[
+  {
+    socketId: '-IW_UceXjNqdsT4JAAAA',
+    id: '01C',
+    url: 'https://1e0a8f45c7bd.ngrok.io',
+    timestamp: 1591257572111
+  },
+  {
+    socketId: 'zer8T_71FJi9RdqDAAAB',
+    id: '01C',
+    url: 'https://ec6cd317ab3b.ngrok.io',
+    timestamp: 1591257577889
+  }
+]
+https://1e0a8f45c7bd.ngrok.io
+Disconnected Socket = acg7fL0G_k9IG6TuAAAE
+deleted[object Object],[object Object]
+Node connection details | url : https://1e0a8f45c7bd.ngrok.io Connection Data : [object Object],[object Object]
+countNaN
+countNaN
+https://1e0a8f45c7bd.ngrok.io
+Node connection details | url : https://ec6cd317ab3b.ngrok.io Connection Data : [object Object]
+countNaN
+https://ec6cd317ab3b.ngrok.io
+Node connection details | url : https://fb35dc94732d.ngrok.io Connection Data : 
+https://fb35dc94732d.ngrok.io
+Node connection details | url : https://15c1f36c4458.ngrok.io Connection Data : 
+https://15c1f36c4458.ngrok.io
+Node connection details | url : https://6aeae30efa4c.ngrok.io Connection Data : 
+https://6aeae30efa4c.ngrok.io

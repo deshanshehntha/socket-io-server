@@ -13,16 +13,14 @@ router.get("/", (req, res) => {
 
 router.get("/sendBroadcastMessage", (req, res) => {
     ConnectedNodeStore.removeAll();
-
     io.emit('requesting_connection_details');
-    io.emit('recieving_connection_details');
-    res.send(ConnectedNodeStore.getConnectionDetails());
+    res.send('wait');
 
 });
 
-router.post("/getConnectionDetails", (req, res) => {
-    console.log(req);
-    res.send(findConnection.connectionFinder(req)).status(200);
+router.get("/getConnectionDetails", (req, res) => {
+    res.send(ConnectedNodeStore.getConnectionDetails());
+    ConnectedNodeStore.removeAll();
 });
 
 
